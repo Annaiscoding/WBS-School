@@ -1,2 +1,1 @@
 # WBS-School
-EniacMagistProject
