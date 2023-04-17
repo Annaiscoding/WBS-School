@@ -1,0 +1,21 @@
+word = "AIR"
+hidden_word = []
+for letter in word:
+    hidden_word.append("-")
+game = True
+number_lives = 5
+while "-" in hidden_word and number_lives > 0:
+  print(" ".join(hidden_word))
+  guess = input("Pick a letter").title()
+  if guess in word:
+    for position in range(len(word)):
+      if guess == word[position]:
+        hidden_word[position] = guess
+    print(f"Correct. {guess} is in a word")
+    if "-" not in hidden_word:
+      print(f"Congratulations, word is {word}, you won")
+  else:
+    number_lives -= 1
+    print(f"Wrong. Number of lives is {number_lives}")
+    if number_lives == 0:
+      print("You've lost")
